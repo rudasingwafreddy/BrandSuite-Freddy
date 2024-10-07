@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    background-image: url(1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cta-button {
+        background-color: #28a745;
+        color: white;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      .cta-button:hover {
+        background-color: #218838;
+      }
+}
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+     height: 100px;
+}
+nav a{
+    height: 100px;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+nav a:hover{
+    background-color: gold;
+}
+nav li:first-child{
+    margin-right: auto;
+}
+sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgb(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.sidebar a{
+    width: 100%;
+}
+.menu-button{
+    display: none;
+}
+@media(max-width: 800px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu-button{
+        display: block;
+    }
+}
+@media(max-width: 400px){
+    .sidebar{
+        width: 100%;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.sidebar {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar li {
+    padding: 10px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5f6368;
+}
+
+.hideOnMobile {
+    display: block;
+}
+
+.menu-button {
+    display: none;
+}
+.sidebar {
+    display: flex;
+}
+}
+/* style.css */
+
+/* Reset styles for form */
+form {
+display: flex;
+flex-direction: column;
+max-width: 600px;
+margin: 0 auto;
+padding: 20px;
+background-color: #f4f4f4;
+border-radius: 8px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+.form-group label {
+margin-bottom: 5px;
+font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+}
+
+button[type="submit"] {
+padding: 10px 15px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+background-color: #575757;
+}
+
+/* Additional styling for sections */
+section {
+padding: 80px 20px;
+margin-top: 60px;
+text-align: center;
+}
+/* style.css */
+
+/* Tabs container */
+.tabs {
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+/* Tab buttons */
+.tab-button {
+padding: 10px 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+background-color: #f4f4f4;
+color: #333;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s, color 0.3s;
+margin: 0 5px;
+}
+
+.tab-button.active {
+background-color: #333;
+color: #fff;
+}
+
+.tab-button:hover {
+background-color: #ddd;
+}
+
+/* Tab content */
+.tab-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+/* Tab panels */
+.tab-panel {
+display: none;
+text-align: center;
+}
+
+.tab-panel.active {
+display: block;
+}
