@@ -7,25 +7,123 @@
     <link rel="stylesheet" href="style.css">
     <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Navbar Styles */
+        nav {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+        /* Mobile menu button */
+        .menu-button {
+            display: none;
+        }
+        marquee {
+            color: #ff6347;
+            font-size: 20px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 30px;
+            margin-top: 5px;
+        }
+
+        /* Sections Styling */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            margin-top: 50px;
+        }
+        section h1 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .menu-button {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="sticky">
-        <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+
+    <nav>
+        <div class="brand">
+            <a href="#">Freddy</a>
+        </div>
+        <marquee direction="right"> KITECH brandsuite</marquee>
+        <ul id="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Features</a></li>
+            <li><a href="#Features">Features</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <ul>
-            <li><a href="#">Freddy</a></li>
-            <marquee direction="right">brandsuite-template</marquee>
-            <li class="hideOnMobile"><a href="#home">Home</a></li>
-            <li class="hideOnMobile"><a href="#about">About</a></li>
-            <li class="hideOnMobile"><a href="#services">Features</a></li>
-            <li class="hideOnMobile"><a href="#contact">Contact</a></li>
-            <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-        </ul>
+        <div class="menu-button" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </div>
     </nav>
 
     <!-- Section Content -->
@@ -33,31 +131,38 @@
         <h1>Home</h1>
         <p>Welcome to BrandSuite.</p>
         <!-- CTA Button using <button> tag -->
-  <button class="cta-button">Get Started</button>
+        <button class="cta-button">Get Started</button>
     </section>
 
     <section id="about">
-        <h1> About BrandSuite</h1>
-        <p> BrandSuite is designed to help small businesses and entrepreneurs build a professional online presence quickly and affordably. 
-            With a suite of tools that include website hosting, custom domains, business emails, and easy-to-use website builders, 
-            BrandSuite simplifies the process of going digital. Whether you're a startup, a local business, or an individual looking to establish your brand,
-            we've got the perfect solution for you..</p>
-            <h1>Why Choose BrandSuite?</h1>  
-            <h1>Fast Setup</h1>
-            Get online in minutes with our simple, user-friendly platform.
-            <h1>Cost-Effective</h1>
-            Affordable packages designed to suit businesses of all sizes.
-            <h1>Reliable Support</h1>
-            24/7 customer support to help you every step of the way.
+        <h1>About BrandSuite</h1>
+        <p>BrandSuite is designed to help small businesses and entrepreneurs build a professional online presence quickly and affordably...</p>
+        <h1>Why Choose BrandSuite?</h1>  
+        <h2>Fast Setup</h2>
+        <p>Get online in minutes with our simple, user-friendly platform.</p>
+        <h2>Cost-Effective</h2>
+        <p>Affordable packages designed to suit businesses of all sizes.</p>
+        <h2>Reliable Support</h2>
+        <p>24/7 customer support to help you every step of the way.</p>
     </section>
+
+    <section id="Features">
+        <h1>Features</h1>
+        <p>BrandSuite offers a wide range of features to get your business online and running smoothly:</p>
+        <h2>Custom Domains</h2>
+        <p>Secure your unique .rw domain name to represent your brand professionally.</p>
+        <h2>SSL-Secured Hosting</h2>
+        <p>Enjoy secure hosting with built-in SSL certificates to protect your website.</p>
+        <h2>Business Emails</h2>
+        <p>Establish credibility with custom email addresses for your business.</p>
+        <h2>Easy Website Builder</h2>
+        <p>Build your website with no coding required using our drag-and-drop builder.</p>
+    </section>
+
     <script>
-        function showSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'flex';
-        }
-        function hideSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'none';
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show');
         }
 
         // Smooth scrolling for internal links
@@ -68,33 +173,12 @@
                 if (targetSection) {
                     e.preventDefault();
                     targetSection.scrollIntoView({ behavior: 'smooth' });
-                    hideSidebar();  // Hide the sidebar on mobile when a link is clicked
+                    // Close the menu on mobile after clicking
+                    document.getElementById('navbar').classList.remove('show');
                 }
             });
         });
-        function openTab(tabId) {
-        // Hide all tab panels
-        document.querySelectorAll('.tab-panel').forEach(panel => {
-            panel.classList.remove('active');
-        });
-
-        // Remove 'active' class from all tab buttons
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.classList.remove('active');
-        });
-
-        // Show the selected tab panel
-        document.getElementById(tabId).classList.add('active');
-
-        // Add 'active' class to the clicked tab button
-        document.querySelector(`.tab-button[onclick="openTab('${tabId}')"]`).classList.add('active');
-    }
-
-    // Optionally, open the first tab by default
-    document.addEventListener('DOMContentLoaded', () => {
-        openTab('gasabo');
-    });
     </script>
-    </body>
-    </html>
-            
+
+</body>
+</html>
