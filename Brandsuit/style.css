@@ -155,7 +155,6 @@ nav a {
 .sidebar {
     display: flex;
 }
-}
 /* style.css */
 
 /* Reset styles for form */
@@ -256,3 +255,138 @@ text-align: center;
 .tab-panel.active {
 display: block;
 }
+        
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Navbar Styles */
+        nav {
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+        /* Mobile menu button */
+        .menu-button {
+            display: none;
+        }
+        marquee {
+            color: #ff6347;
+            font-size: 20px;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 30px;
+            margin-top: 5px;
+        }
+
+        /* Sections Styling */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            margin-top: 50px;
+        }
+        section h1 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        footer .footer-links {
+            margin-bottom: 15px;
+        }
+        footer .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        footer .footer-links a:hover {
+            color: #ff6347;
+        }
+        footer .social-media {
+            margin-bottom: 15px;
+        }
+        footer .social-media a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        footer .social-media a:hover {
+            color: #ff6347;
+        }
+        footer .copyright {
+            font-size: 16px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .menu-button {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    
