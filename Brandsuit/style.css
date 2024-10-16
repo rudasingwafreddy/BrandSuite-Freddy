@@ -390,3 +390,38 @@ display: block;
             }
         }
     
+/* Hide menu button on larger screens */
+.menu-button {
+    display: none;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    /* Initially hide the navigation menu */
+    ul#navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    /* Show the mobile navigation when 'active' */
+    ul#navbar.active {
+        display: flex;
+    }
+
+    ul#navbar li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Show the hamburger menu icon */
+    .menu-button {
+        display: block;
+        cursor: pointer;
+    }
+}
