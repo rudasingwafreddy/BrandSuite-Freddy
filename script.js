@@ -3,6 +3,17 @@ function toggleMenu() {
     var navbar = document.getElementById('navbar');
     navbar.classList.toggle('active');
 }
+
+// Close the mobile menu when a menu item is clicked
+document.querySelectorAll('#navbar li a').forEach(link => {
+    link.addEventListener('click', () => {
+        var navbar = document.getElementById('navbar');
+        if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+        }
+    });
+});
+
 let slideIndex = 0;
 showSlides(slideIndex);
 
