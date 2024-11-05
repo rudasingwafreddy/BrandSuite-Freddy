@@ -40,14 +40,11 @@ nav li{
 }
 nav a{
     height: 100px;
-    padding: 0 30px;
+    padding: 0 90px;
     text-decoration: none;
     display: flex;
     align-items: center;
     color: black;
-}
-nav a:hover{
-    background-color: gold;
 }
 nav li:first-child{
     margin-right: auto;
@@ -68,6 +65,20 @@ sidebar{
     align-items: flex-start;
     justify-content: flex-start;
 }
+nav {
+    display: flex;
+    align-items: center;  
+    justify-content: space-between; 
+}
+
+.menu-button {
+    display: flex;
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    height: 100%; 
+    cursor: pointer; 
+}
+
 .sidebar li{
     width: 100%;
 }
@@ -118,6 +129,54 @@ nav {
     height: 100vh;
     z-index: 1000;
 }
+/* Fullscreen slider */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Make slider full height of the viewport */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire slide area */
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 
 .sidebar li {
     padding: 10px;
@@ -300,10 +359,6 @@ display: block;
         .menu-button {
             display: none;
         }
-        marquee {
-            color: #ff6347;
-            font-size: 20px;
-        }
 
         /* CTA Button */
         .cta-button {
@@ -330,6 +385,18 @@ display: block;
             font-size: 18px;
             line-height: 1.6;
         }
+        section {
+            padding: 40px 20px; /* Adjust padding as needed */
+            margin: 0; /* Remove margin to eliminate space between sections */
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 20px 10px; /* Adjust padding for smaller screens */
+                margin: 0; /* Ensures sections are flush on smaller screens */
+            }
+        }        
 
         /* Footer Styling */
         footer {
@@ -497,3 +564,37 @@ display: block;
     height: 100%;
     border: 0;
 }
+/* Add to style.css */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    font-size: 1em;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
