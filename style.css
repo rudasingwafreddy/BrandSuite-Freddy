@@ -82,6 +82,72 @@ nav {
 .sidebar li{
     width: 100%;
 }
+/* Slider overlay content */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Overlay content */
+.slider-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.slider-overlay h1 {
+    font-size: 2.5rem;
+}
+
+.slider-overlay p {
+    font-size: 1.2rem;
+}
+
+.slider-overlay .cta-button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+/* Optional: Style for navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 16px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 .sidebar a{
     width: 100%;
 }
@@ -373,8 +439,8 @@ display: block;
 
         /* Sections Styling */
         section {
-            padding: 80px 20px;
-            min-height: 100vh;
+            padding: 40px 20px;
+            min-height: 10vh;
             margin-top: 50px;
         }
         section h1 {
@@ -497,7 +563,7 @@ display: block;
 .slider {
     position: relative;
     width: 100%;
-    max-width: 800px;
+    max-width: 1300px;
     margin: auto;
     overflow: hidden;
     border: 2px solid #ddd;
@@ -596,5 +662,6 @@ display: block;
 .card:hover {
     transform: translateY(-5px);
 }
+
 
 
