@@ -24,64 +24,7 @@ body{
         background-color: #218838;
       }
 }
-nav{
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-nav li{
-     height: 100px;
-}
-nav a{
-    height: 100px;
-    padding: 0 90px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
-}
-nav li:first-child{
-    margin-right: auto;
-}
-sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    background-color: rgb(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
 
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-nav {
-    display: flex;
-    align-items: center;  
-    justify-content: space-between; 
-}
-
-.menu-button {
-    display: flex;
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    height: 100%; 
-    cursor: pointer; 
-}
-
-.sidebar li{
-    width: 100%;
-}
 /* Slider overlay content */
 .slider {
     position: relative;
@@ -148,53 +91,6 @@ nav {
     right: 10px;
 }
 
-.sidebar a{
-    width: 100%;
-}
-.menu-button{
-    display: none;
-}
-@media(max-width: 800px){
-    .hideOnMobile{
-        display: none;
-    }
-    .menu-button{
-        display: block;
-    }
-}
-@media(max-width: 400px){
-    .sidebar{
-        width: 100%;
-    }
-}
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-nav {
-    background-color: #f8f9fa;
-    padding: 10px;
-}
-
-.sidebar {
-    display: none;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #333;
-    position: absolute;
-    width: 200px;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 1000;
-}
 /* Fullscreen slider */
 .slider {
     position: relative;
@@ -244,42 +140,7 @@ nav {
 }
 
 
-.sidebar li {
-    padding: 10px;
-}
 
-.sidebar a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #5f6368;
-}
-
-.hideOnMobile {
-    display: block;
-}
-
-.menu-button {
-    display: none;
-}
-.sidebar {
-    display: flex;
-}
 /* style.css */
 
 /* Reset styles for form */
@@ -392,35 +253,42 @@ display: block;
         }
         
         /* Navbar Styles */
-        nav {
-            background-color: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ff6347;
-        }
+        /* Navbar */
+nav {
+    background-color: rgb(161, 159, 159);
+    color: #333;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    z-index: 1000;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes menu items to the right */
+    gap: 15px; /* Adjust space between menu items */
+}
+nav li {
+    flex: 1; /* This makes each list item take equal space */
+    text-align: center;
+}
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #ff6347;
+}
+
         /* Mobile menu button */
         .menu-button {
             display: none;
@@ -508,7 +376,6 @@ display: block;
                 position: absolute;
                 top: 50px;
                 right: 0;
-                width: 100%;
                 text-align: center;
             }
             nav ul.show {
@@ -560,53 +427,54 @@ display: block;
 }
 
 /* General slider container styling */
+/* Fullscreen slider */
 .slider {
     position: relative;
-    width: 100%;
-    max-width: 1300px;
-    margin: auto;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
     overflow: hidden;
-    border: 2px solid #ddd;
 }
 
-/* Individual slides */
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
 }
 
 .slide {
     min-width: 100%;
-    box-sizing: border-box;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
 .slide img {
     width: 100%;
-    display: block;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire slide area */
 }
 
 /* Navigation buttons (previous/next) */
 .prev, .next {
     position: absolute;
     top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    transform: translateY(-50%);
+    font-size: 3rem;
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    cursor: pointer;
     user-select: none;
+    border-radius: 50%;
 }
 
 .prev {
-    left: 0;
+    left: 10px;
 }
 
 .next {
-    right: 0;
+    right: 10px;
 }
+
 
 /* Optional: Add a fade-in effect to make transitions smoother */
 .fade {
@@ -662,6 +530,100 @@ display: block;
 .card:hover {
     transform: translateY(-5px);
 }
+.logo {
+    height: 40px; /* Adjust the logo size as needed */
+    width: auto;
+    vertical-align: middle;
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar styling */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4d4a4a;
+    padding: 20px 50px;
+    color: rgb(10, 10, 10);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6347;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    margin-left: auto; /* Pushes menu items to the right */
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+.menu-button {
+    display: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
 
 
 
